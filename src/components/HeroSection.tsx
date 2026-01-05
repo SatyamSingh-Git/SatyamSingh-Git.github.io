@@ -94,7 +94,7 @@ const HeroSection = () => {
                 transition={{ delay: 1.3, duration: 1.0 }}
               >
                 <motion.a
-                  href="https://drive.google.com/file/d/1WOCC0BOG-1Yd3kekOsnSSBcFnCxAMKdN/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1zlJAPavFh-IlX2o3CJiN-ol_UxZZkAPD/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block px-10 py-4 rounded-xl bg-gradient-to-r from-purple-600 via-primary to-accent text-white font-black text-xl shadow-2xl border-2 border-primary/30 text-center cursor-pointer w-full max-w-xs overflow-hidden"
