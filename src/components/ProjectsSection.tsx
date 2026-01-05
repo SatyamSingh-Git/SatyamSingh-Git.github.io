@@ -1,160 +1,167 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
 
-interface Project {
-  id: string;
-  title: string;
-  category: string;
-  description: string;
-  tools: string[];
-  image: string;
-  github?: string;
-  demo?: string;
-}
+// Project images - using placeholder images for now
+const smartIrrigationImg = '\ ML-IOT.png';
+const multiAgentImg = '\ Mar Os.png';
+const chatAnalyzerImg = '\ whatsapp.png';
+const ayurGreensImg = '\ Ayusgreens.png'
+const ragasEvaluationImg = '\ download.png';
+const voiceAgentImg = '\ CCai.png';
+const computerUseAgentImg = '\ computer-use.png';
+const misinfoDetectorImg = '\ misinfo-detector.png';
 
-const projects: Project[] = [
-  {
-    id: '01',
-    title: 'E-Commerce Platform',
-    category: 'Full Stack',
-    description: 'A modern e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.',
-    tools: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '02',
-    title: 'Task Management App',
-    category: 'Frontend',
-    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    tools: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '03',
-    title: 'Weather Dashboard',
-    category: 'Frontend',
-    description: 'An interactive weather dashboard that provides real-time weather data, forecasts, and climate visualizations using external APIs.',
-    tools: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS3'],
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '04',
-    title: 'Social Media Analytics',
-    category: 'Data Science',
-    description: 'A comprehensive analytics platform for social media metrics, engagement tracking, and performance visualization.',
-    tools: ['Python', 'Pandas', 'D3.js', 'PostgreSQL'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '05',
-    title: 'Fitness Tracking App',
-    category: 'Mobile',
-    description: 'A cross-platform mobile application for tracking workouts, nutrition, and fitness goals with social features.',
-    tools: ['React Native', 'Express', 'MongoDB', 'Redux'],
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '06',
-    title: 'Portfolio Generator',
-    category: 'Full Stack',
-    description: 'A dynamic portfolio generator that allows users to create and customize their professional portfolios with various templates.',
-    tools: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '07',
-    title: 'Computer Use Agent – AI-Powered Automation Platform',
-    category: 'AI Automation / Enterprise',
-    description: 'Engineered a scalable desktop automation platform with Python, PyQt, Selenium, and Gemini (LLM) backend, automating multistep workflows across browsers and applications. Delivered a cloud-ready, self-healing system where Gemini AI executes real-time corrective actions, ensuring enterprise reliability and reducing manual interventions by 70%. Integrated voice-based commands with Whisper & Picovoice, achieving 95% recognition accuracy.',
-    tools: ['Python', 'PyQt', 'Selenium', 'Gemini LLM', 'Whisper', 'Picovoice', 'Cloud', 'Self-Healing AI', 'Voice Commands'],
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
-  },
-  {
-    id: '08',
-    title: 'AI Misinformation Detector – Multimodal Forensic AI System',
-    category: 'Multimodal AI / Security',
-    description: 'Developed a multimodal AI detector integrating text, image, and metadata pipelines, achieving 85%+ accuracy and 0.82 confidence on misinformation verdicts. Built a 6-layer forensic pipeline by combining CLIP, GNNs, Deepfake, and Gemini 2.5 Flash for cross-modal reasoning and real-time Google Cloud (GCP) Fact Check API verification. Engineered a FastAPI + Docker backend handling 100+ concurrent requests/sec. Delivered explainable AI outputs including sentiment and linguistic analysis, confidence (0.91), coherence scoring (0.25), and transparent correction insights for user trust.',
-    tools: ['Python', 'CLIP', 'GNNs', 'Gemini 2.5 Flash', 'FastAPI', 'Docker', 'GCP', 'Deepfake Detection', 'NLP', 'Explainable AI'],
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop',
-  },
-];
+const ProjectsSection = () => {
+  const projects = [
+    {
+      id: '01',
+      title: 'Smart Irrigation System',
+      category: 'ML + IoT',
+      description: 'Engineered dual ML models for indoor/outdoor irrigation, reducing water usage by 20% and achieving 98% accuracy using KNN, SVM, and XGBoost algorithms.',
+      tools: ['Python', 'Scikit-learn', 'ESP8266', 'NumPy', 'Pandas', 'MLExtend','XGBoost', 'Word Cloud', 'Charts & Graphs'],
+      image: smartIrrigationImg
+    },
+    {
+      id: '02', 
+      title: 'Multi-Agent Retail Optimization',
+      category: 'Reinforcement Learning',
+      description: 'Developed a reinforcement learning-based multiagent system for inventory and pricing optimization, improving fulfillment by 25% with real-time dashboards.',
+      tools: ['Python', 'Reinforcement Learning', 'Streamlit', 'BeautifulSoup', 'Data Analytics', 'Agentic AI'],
+      image: multiAgentImg
+    },
+    {
+      id: '03',
+      title: 'WhatsApp Chat Analyzer', 
+      category: 'NLP & Data Science',
+      description: 'Built a full-featured chat analysis platform using Streamlit and NLP, enabling group/user analysis with sentiment, frequency, and emoji usage insights.',
+      tools: ['Python', 'Streamlit', 'NLP', 'Data Visualization', 'Sentiment Analysis','Scikit-Learn', 'UrlExtract'],
+      image: chatAnalyzerImg
+    },
+    {
+      id: '04',
+      title: 'AyurGreens – AI-Driven Android App',
+      category: 'Android & AI', 
+      description: 'Designed a Kotlin app with Jetpack Compose and Firebase, featuring a fine-tuned Gemini 2.5 Flash AI chatbot for medicinal plant discoveries and information.',
+      tools: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Gemini AI', 'SQLite', 'Material Design 3'],
+      image: ayurGreensImg
+    },
+    {
+      id: '05',
+      title: 'RAGAs for LLM Evaluation',
+      category: 'LLM Evaluation / NLP',
+      description: 'Built a production-grade pipeline to evaluate LLM outputs using Retrieval-Augmented Generation Assessment (RAGAs), computing faithfulness, answer relevancy, and context precision with Gemini 2.5 Flash.',
+      tools: ['Python', 'RAGAs', 'Google Gemini API', 'Jupyter Notebook', 'Data Analysis', 'LLM'],
+      image: ragasEvaluationImg
+    },
+    {
+      id: '06',
+      title: 'Voice-Controlled Task Automation Agent',
+      category: 'AI Assistant / Automation',
+      description: 'Developed a voice-activated Python agent that executes system tasks like opening apps or writing files using commands or voice prompts, with API integration, .env setup, and support for commands like "Hey CC, open notepad".',
+      tools: ['Python 3.11', 'Speech Recognition', 'OS Automation', 'dotenv', 'Voice Commands','Picovoice', 'PyAutoGUI', 'Selenium'],
+      image: voiceAgentImg
+    },
+    {
+      id: '07',
+      title: 'Computer Use Agent – AI-Powered Automation Platform',
+      category: 'AI Automation / Enterprise',
+      description: 'Engineered a scalable desktop automation platform with Python, PyQt, Selenium, and Gemini (LLM) backend, automating multistep workflows across browsers and applications. Delivered a cloud-ready, self-healing system where Gemini AI executes real-time corrective actions, ensuring enterprise reliability and reducing manual interventions by 70%. Integrated voice-based commands with Whisper & Picovoice, achieving 95% recognition accuracy.',
+      tools: ['Python', 'PyQt', 'Selenium', 'Gemini LLM', 'Whisper', 'Picovoice', 'Cloud', 'Self-Healing AI'],
+      image: computerUseAgentImg
+    },
+    {
+      id: '08',
+      title: 'AI Misinformation Detector – Multimodal Forensic AI System',
+      category: 'Multimodal AI / Security',
+      description: 'Developed a multimodal AI detector integrating text, image, and metadata pipelines, achieving 85%+ accuracy and 0.82 confidence on misinformation verdicts. Built a 6-layer forensic pipeline by combining CLIP, GNNs, Deepfake, and Gemini 2.5 Flash for cross-modal reasoning and real-time Google Cloud (GCP) Fact Check API verification. Engineered a FastAPI + Docker backend handling 100+ concurrent requests/sec. Delivered explainable AI outputs including sentiment and linguistic analysis, confidence (0.91), coherence scoring (0.25), and transparent correction insights for user trust.',
+      tools: ['Python', 'CLIP', 'GNNs', 'Gemini 2.5 Flash', 'FastAPI', 'Docker', 'GCP', 'Deepfake Detection', 'NLP'],
+      image: misinfoDetectorImg
+    }
+  ];
 
-export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+    <section id="work" className="py-20 relative">
+      <div className="container mx-auto px-6">
+        <motion.h2 
+          className="text-4xl font-bold text-center mb-16 text-foreground"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            Some of my recent work
-          </p>
-        </motion.div>
+          My Work
+        </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
+              className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover-scale"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              whileHover={{ y: -10 }}
             >
+              {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="text-white font-bold text-sm bg-purple-800/90 backdrop-blur-sm px-3 py-2 rounded-full border-2 border-white/30 shadow-lg">
+                    Project {project.id}
+                  </span>
+                </div>
+                {/* Dark overlay for better text visibility */}
+                <div className="absolute top-0 left-0 w-24 h-16 bg-gradient-to-br from-black/40 to-transparent rounded-br-2xl" />
               </div>
-              <div className="p-6">
-                <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                  {project.category}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-2 mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tools.map((tool) => (
+
+              {/* Project Content */}
+              <div className="p-6 space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="text-primary text-sm font-medium mb-2">{project.category}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {project.description}
+                  </p>
+                </motion.div>
+
+                {/* Tools */}
+                <motion.div 
+                  className="flex flex-wrap gap-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  {project.tools.map((tool, toolIndex) => (
                     <span
                       key={tool}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                      className="px-2 py-1 bg-muted/50 text-muted-foreground text-xs rounded border border-muted group-hover:border-primary/30 group-hover:text-primary transition-all duration-300"
                     >
                       {tool}
                     </span>
                   ))}
-                </div>
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      <Github size={20} />
-                      <span>Code</span>
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      <ExternalLink size={20} />
-                      <span>Demo</span>
-                    </a>
-                  )}
-                </div>
+                </motion.div>
+              </div>
+
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5" />
               </div>
             </motion.div>
           ))}
@@ -162,4 +169,6 @@ export default function ProjectsSection() {
       </div>
     </section>
   );
-}
+};
+
+export default ProjectsSection;
