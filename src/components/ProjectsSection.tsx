@@ -7,8 +7,8 @@ const chatAnalyzerImg = '\ whatsapp.png';
 const ayurGreensImg = '\ Ayusgreens.png'
 const ragasEvaluationImg = '\ download.png';
 const voiceAgentImg = '\ CCai.png';
-const computerUseAgentImg = '\ computer-use.png';
-const misinfoDetectorImg = '\ misinfo-detector.png';
+const computerUseAgentImg = '\ src/components/computer-use.png';
+const misinfoDetectorImg = '\ src/components/misinfo-detector.png';
 
 const ProjectsSection = () => {
   const projects = [
