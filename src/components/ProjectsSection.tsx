@@ -1,99 +1,100 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
-const projects = [
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  tools: string[];
+  image: string;
+  github?: string;
+  demo?: string;
+}
+
+const projects: Project[] = [
   {
-    id: 1,
-    title: "AI-Powered Code Review Assistant",
-    description: "Developed an intelligent code review system using GPT-4 and static analysis tools to provide automated feedback on code quality, security vulnerabilities, and best practices.",
-    image: "/project-placeholder.png",
-    tools: ["Python", "GPT-4", "FastAPI", "Docker", "GitHub Actions"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '01',
+    title: 'E-Commerce Platform',
+    category: 'Full Stack',
+    description: 'A modern e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.',
+    tools: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&auto=format&fit=crop',
   },
   {
-    id: 2,
-    title: "Real-time Collaborative Whiteboard",
-    description: "Built a scalable real-time collaboration platform with WebSocket support, allowing multiple users to draw, annotate, and share ideas simultaneously.",
-    image: "/project-placeholder.png",
-    tools: ["React", "Node.js", "Socket.io", "MongoDB", "Redis"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '02',
+    title: 'Task Management App',
+    category: 'Frontend',
+    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+    tools: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop',
   },
   {
-    id: 3,
-    title: "E-Commerce Analytics Dashboard",
-    description: "Created a comprehensive analytics dashboard for e-commerce businesses, featuring real-time sales tracking, customer behavior analysis, and predictive insights.",
-    image: "/project-placeholder.png",
-    tools: ["TypeScript", "React", "D3.js", "PostgreSQL", "AWS"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '03',
+    title: 'Weather Dashboard',
+    category: 'Frontend',
+    description: 'An interactive weather dashboard that provides real-time weather data, forecasts, and climate visualizations using external APIs.',
+    tools: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS3'],
+    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&auto=format&fit=crop',
   },
   {
-    id: 4,
-    title: "Smart Home IoT Platform",
-    description: "Designed and implemented a complete IoT ecosystem for smart home automation, including device management, scheduling, and energy optimization.",
-    image: "/project-placeholder.png",
-    tools: ["Python", "MQTT", "Raspberry Pi", "React Native", "Firebase"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '04',
+    title: 'Social Media Analytics',
+    category: 'Data Science',
+    description: 'A comprehensive analytics platform for social media metrics, engagement tracking, and performance visualization.',
+    tools: ['Python', 'Pandas', 'D3.js', 'PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop',
   },
   {
-    id: 5,
-    title: "Machine Learning Pipeline Framework",
-    description: "Built an end-to-end ML pipeline framework that automates data preprocessing, model training, evaluation, and deployment with built-in versioning.",
-    image: "/project-placeholder.png",
-    tools: ["Python", "TensorFlow", "Kubernetes", "MLflow", "Apache Airflow"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '05',
+    title: 'Fitness Tracking App',
+    category: 'Mobile',
+    description: 'A cross-platform mobile application for tracking workouts, nutrition, and fitness goals with social features.',
+    tools: ['React Native', 'Express', 'MongoDB', 'Redux'],
+    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&auto=format&fit=crop',
   },
   {
-    id: 6,
-    title: "Blockchain-based Supply Chain Tracker",
-    description: "Developed a transparent supply chain management system using blockchain technology to track product authenticity and movement across the distribution network.",
-    image: "/project-placeholder.png",
-    tools: ["Solidity", "Ethereum", "Web3.js", "React", "IPFS"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '06',
+    title: 'Portfolio Generator',
+    category: 'Full Stack',
+    description: 'A dynamic portfolio generator that allows users to create and customize their professional portfolios with various templates.',
+    tools: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind CSS'],
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop',
   },
   {
-    id: 7,
-    title: "Computer Use Agent – AI-Powered Automation Platform",
-    description: "Engineered a scalable desktop automation platform with Python, PyQt, Selenium, and Gemini (LLM) backend, automating multistep workflows across browsers and applications. Delivered a cloud-ready, self-healing system where Gemini AI executes real-time corrective actions, ensuring enterprise reliability and reducing manual interventions by 70%. Integrated voice-based commands with Whisper & Picovoice, achieving 95% recognition accuracy.",
-    image: "/project-placeholder.png",
-    tools: ["Python", "PyQt", "Selenium", "Gemini LLM", "Whisper", "Picovoice", "Cloud", "Voice Commands"],
-    liveLink: "#",
-    githubLink: "#"
+    id: '07',
+    title: 'Computer Use Agent – AI-Powered Automation Platform',
+    category: 'AI Automation / Enterprise',
+    description: 'Engineered a scalable desktop automation platform with Python, PyQt, Selenium, and Gemini (LLM) backend, automating multistep workflows across browsers and applications. Delivered a cloud-ready, self-healing system where Gemini AI executes real-time corrective actions, ensuring enterprise reliability and reducing manual interventions by 70%. Integrated voice-based commands with Whisper & Picovoice, achieving 95% recognition accuracy.',
+    tools: ['Python', 'PyQt', 'Selenium', 'Gemini LLM', 'Whisper', 'Picovoice', 'Cloud', 'Self-Healing AI', 'Voice Commands'],
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
   },
   {
-    id: 8,
-    title: "AI Misinformation Detector – Multimodal Forensic AI System",
-    description: "Developed a multimodal AI detector integrating text, image, and metadata pipelines, achieving 85%+ accuracy and 0.82 confidence on misinformation verdicts. Built a 6-layer forensic pipeline by combining CLIP, GNNs, Deepfake, and Gemini 2.5 Flash for cross-modal reasoning and real-time Google Cloud (GCP) Fact Check API verification. Engineered a FastAPI + Docker backend handling 100+ concurrent requests/sec. Delivered explainable AI outputs including sentiment and linguistic analysis, confidence (0.91), coherence scoring (0.25), and transparent correction insights for user trust.",
-    image: "/project-placeholder.png",
-    tools: ["Python", "CLIP", "GNNs", "Gemini 2.5 Flash", "FastAPI", "Docker", "GCP", "Deepfake Detection", "NLP"],
-    liveLink: "#",
-    githubLink: "#"
-  }
+    id: '08',
+    title: 'AI Misinformation Detector – Multimodal Forensic AI System',
+    category: 'Multimodal AI / Security',
+    description: 'Developed a multimodal AI detector integrating text, image, and metadata pipelines, achieving 85%+ accuracy and 0.82 confidence on misinformation verdicts. Built a 6-layer forensic pipeline by combining CLIP, GNNs, Deepfake, and Gemini 2.5 Flash for cross-modal reasoning and real-time Google Cloud (GCP) Fact Check API verification. Engineered a FastAPI + Docker backend handling 100+ concurrent requests/sec. Delivered explainable AI outputs including sentiment and linguistic analysis, confidence (0.91), coherence scoring (0.25), and transparent correction insights for user trust.',
+    tools: ['Python', 'CLIP', 'GNNs', 'Gemini 2.5 Flash', 'FastAPI', 'Docker', 'GCP', 'Deepfake Detection', 'NLP', 'Explainable AI'],
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop',
+  },
 ];
 
-const ProjectsSection = () => {
+export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Featured Projects
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience
-            in software development, AI/ML, and system design.
+          <p className="text-xl text-gray-600 dark:text-gray-300">
+            Some of my recent work
           </p>
         </motion.div>
 
@@ -103,52 +104,56 @@ const ProjectsSection = () => {
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
+                  {project.category}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-2 mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {project.description}
                 </p>
-                
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tools.map((tool, i) => (
+                  {project.tools.map((tool) => (
                     <span
-                      key={i}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
+                      key={tool}
+                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
                     >
                       {tool}
                     </span>
                   ))}
                 </div>
-
                 <div className="flex gap-4">
-                  <a
-                    href={project.liveLink}
-                    className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
-                  >
-                    <ExternalLink size={16} />
-                    <span className="text-sm">Live Demo</span>
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:underline"
-                  >
-                    <Github size={16} />
-                    <span className="text-sm">Code</span>
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                    >
+                      <Github size={20} />
+                      <span>Code</span>
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                    >
+                      <ExternalLink size={20} />
+                      <span>Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -157,6 +162,4 @@ const ProjectsSection = () => {
       </div>
     </section>
   );
-};
-
-export default ProjectsSection;
+}
