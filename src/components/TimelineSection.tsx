@@ -10,6 +10,13 @@ const TimelineSection = () => {
       type: 'career'
     },
     {
+      date: 'Oct 2025 – Dec 2025',
+      title: 'AI and Data Science Intern',
+      company: 'CollegeDunia | Remote',
+      description: 'Collaborated with the AI team to design Agentic AI pipelines for automated query understanding and response generation. Processed and analyzed 1M+ educational data records to support production of ML models. Worked on NLP techniques - vector embeddings and semantic matching to enhance content relevance. Improved response accuracy & retrieval by 25% through integration of vector-based search mechanisms.',
+      type: 'career'
+    },
+    {
       date: 'August 2023',
       title: 'B.Tech in Electronics and Communication Engineering',
       company: 'National Institute of Technology Delhi',
