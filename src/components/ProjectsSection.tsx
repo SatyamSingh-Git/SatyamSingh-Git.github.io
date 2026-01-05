@@ -1,151 +1,155 @@
+import React from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLink, Github } from 'lucide-react';
 
-// Project images - using placeholder images for now
-const smartIrrigationImg = '\ ML-IOT.png';
-const multiAgentImg = '\ Mar Os.png';
-const chatAnalyzerImg = '\ whatsapp.png';
-const ayurGreensImg = '\ Ayusgreens.png'
-const ragasEvaluationImg = '\ download.png';
-const voiceAgentImg = '\ CCai.png';
-
-const ProjectsSection = () => {
-  const projects = [
-    {
-      id: '01',
-      title: 'Smart Irrigation System',
-      category: 'ML + IoT',
-      description: 'Engineered dual ML models for indoor/outdoor irrigation, reducing water usage by 20% and achieving 98% accuracy using KNN, SVM, and XGBoost algorithms.',
-      tools: ['Python', 'Scikit-learn', 'ESP8266', 'NumPy', 'Pandas', 'MLExtend','XGBoost', 'Word Cloud', 'Charts & Graphs'],
-      image: smartIrrigationImg
-    },
-    {
-      id: '02', 
-      title: 'Multi-Agent Retail Optimization',
-      category: 'Reinforcement Learning',
-      description: 'Developed a reinforcement learning-based multiagent system for inventory and pricing optimization, improving fulfillment by 25% with real-time dashboards.',
-      tools: ['Python', 'Reinforcement Learning', 'Streamlit', 'BeautifulSoup', 'Data Analytics', 'Agentic AI'],
-      image: multiAgentImg
-    },
-    {
-      id: '03',
-      title: 'WhatsApp Chat Analyzer', 
-      category: 'NLP & Data Science',
-      description: 'Built a full-featured chat analysis platform using Streamlit and NLP, enabling group/user analysis with sentiment, frequency, and emoji usage insights.',
-      tools: ['Python', 'Streamlit', 'NLP', 'Data Visualization', 'Sentiment Analysis','Scikit-Learn', 'UrlExtract'],
-      image: chatAnalyzerImg
-    },
-    {
-      id: '04',
-      title: 'AyurGreens – AI-Driven Android App',
-      category: 'Android & AI', 
-      description: 'Designed a Kotlin app with Jetpack Compose and Firebase, featuring a fine-tuned Gemini 2.5 Flash AI chatbot for medicinal plant discoveries and information.',
-      tools: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Gemini AI', 'SQLite', 'Material Design 3'],
-      image: ayurGreensImg
-    },
-    {
-  id: '05',
-  title: 'RAGAs for LLM Evaluation',
-  category: 'LLM Evaluation / NLP',
-  description: 'Built a production-grade pipeline to evaluate LLM outputs using Retrieval-Augmented Generation Assessment (RAGAs), computing faithfulness, answer relevancy, and context precision with Gemini 2.5 Flash.',
-  tools: ['Python', 'RAGAs', 'Google Gemini API', 'Jupyter Notebook', 'Data Analysis', 'LLM'],
-  image: ragasEvaluationImg
+const projects = [
+  {
+    id: 1,
+    title: "AI-Powered Code Review Assistant",
+    description: "Developed an intelligent code review system using GPT-4 and static analysis tools to provide automated feedback on code quality, security vulnerabilities, and best practices.",
+    image: "/project-placeholder.png",
+    tools: ["Python", "GPT-4", "FastAPI", "Docker", "GitHub Actions"],
+    liveLink: "#",
+    githubLink: "#"
   },
   {
-  id: '06',
-  title: 'Voice-Controlled Task Automation Agent',
-  category: 'AI Assistant / Automation',
-  description: 'Developed a voice-activated Python agent that executes system tasks like opening apps or writing files using commands or voice prompts, with API integration, .env setup, and support for commands like “Hey CC, open notepad”.',
-  tools: ['Python 3.11', 'Speech Recognition', 'OS Automation', 'dotenv', 'Voice Commands','Picovoice', 'PyAutoGUI', 'Selenium'],
-  image: voiceAgentImg
+    id: 2,
+    title: "Real-time Collaborative Whiteboard",
+    description: "Built a scalable real-time collaboration platform with WebSocket support, allowing multiple users to draw, annotate, and share ideas simultaneously.",
+    image: "/project-placeholder.png",
+    tools: ["React", "Node.js", "Socket.io", "MongoDB", "Redis"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    id: 3,
+    title: "E-Commerce Analytics Dashboard",
+    description: "Created a comprehensive analytics dashboard for e-commerce businesses, featuring real-time sales tracking, customer behavior analysis, and predictive insights.",
+    image: "/project-placeholder.png",
+    tools: ["TypeScript", "React", "D3.js", "PostgreSQL", "AWS"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    id: 4,
+    title: "Smart Home IoT Platform",
+    description: "Designed and implemented a complete IoT ecosystem for smart home automation, including device management, scheduling, and energy optimization.",
+    image: "/project-placeholder.png",
+    tools: ["Python", "MQTT", "Raspberry Pi", "React Native", "Firebase"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    id: 5,
+    title: "Machine Learning Pipeline Framework",
+    description: "Built an end-to-end ML pipeline framework that automates data preprocessing, model training, evaluation, and deployment with built-in versioning.",
+    image: "/project-placeholder.png",
+    tools: ["Python", "TensorFlow", "Kubernetes", "MLflow", "Apache Airflow"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    id: 6,
+    title: "Blockchain-based Supply Chain Tracker",
+    description: "Developed a transparent supply chain management system using blockchain technology to track product authenticity and movement across the distribution network.",
+    image: "/project-placeholder.png",
+    tools: ["Solidity", "Ethereum", "Web3.js", "React", "IPFS"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    id: 7,
+    title: "Computer Use Agent – AI-Powered Automation Platform",
+    description: "Engineered a scalable desktop automation platform with Python, PyQt, Selenium, and Gemini (LLM) backend, automating multistep workflows across browsers and applications. Delivered a cloud-ready, self-healing system where Gemini AI executes real-time corrective actions, ensuring enterprise reliability and reducing manual interventions by 70%. Integrated voice-based commands with Whisper & Picovoice, achieving 95% recognition accuracy.",
+    image: "/project-placeholder.png",
+    tools: ["Python", "PyQt", "Selenium", "Gemini LLM", "Whisper", "Picovoice", "Cloud", "Voice Commands"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    id: 8,
+    title: "AI Misinformation Detector – Multimodal Forensic AI System",
+    description: "Developed a multimodal AI detector integrating text, image, and metadata pipelines, achieving 85%+ accuracy and 0.82 confidence on misinformation verdicts. Built a 6-layer forensic pipeline by combining CLIP, GNNs, Deepfake, and Gemini 2.5 Flash for cross-modal reasoning and real-time Google Cloud (GCP) Fact Check API verification. Engineered a FastAPI + Docker backend handling 100+ concurrent requests/sec. Delivered explainable AI outputs including sentiment and linguistic analysis, confidence (0.91), coherence scoring (0.25), and transparent correction insights for user trust.",
+    image: "/project-placeholder.png",
+    tools: ["Python", "CLIP", "GNNs", "Gemini 2.5 Flash", "FastAPI", "Docker", "GCP", "Deepfake Detection", "NLP"],
+    liveLink: "#",
+    githubLink: "#"
   }
+];
 
-
-  ];
-
+const ProjectsSection = () => {
   return (
-    <section id="work" className="py-20 relative">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <motion.h2 
-          className="text-4xl font-bold text-center mb-16 text-foreground"
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          My Work
-        </motion.h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+            Featured Projects
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills and experience
+            in software development, AI/ML, and system design.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover-scale"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
-                <motion.img
+              <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
+                <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  initial={{ scale: 1.1 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="text-white font-bold text-sm bg-purple-800/90 backdrop-blur-sm px-3 py-2 rounded-full border-2 border-white/30 shadow-lg">
-                    Project {project.id}
-                  </span>
-                </div>
-                {/* Dark overlay for better text visibility */}
-                <div className="absolute top-0 left-0 w-24 h-16 bg-gradient-to-br from-black/40 to-transparent rounded-br-2xl" />
               </div>
-
-              {/* Project Content */}
-              <div className="p-6 space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-primary text-sm font-medium mb-2">{project.category}</p>
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                </motion.div>
-
-                {/* Tools */}
-                <motion.div 
-                  className="flex flex-wrap gap-2"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  {project.tools.map((tool, toolIndex) => (
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tools.map((tool, i) => (
                     <span
-                      key={tool}
-                      className="px-2 py-1 bg-muted/50 text-muted-foreground text-xs rounded border border-muted group-hover:border-primary/30 group-hover:text-primary transition-all duration-300"
+                      key={i}
+                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
                     >
                       {tool}
                     </span>
                   ))}
-                </motion.div>
-              </div>
+                </div>
 
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5" />
+                <div className="flex gap-4">
+                  <a
+                    href={project.liveLink}
+                    className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    <ExternalLink size={16} />
+                    <span className="text-sm">Live Demo</span>
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:underline"
+                  >
+                    <Github size={16} />
+                    <span className="text-sm">Code</span>
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
